@@ -1,0 +1,75 @@
+{
+  "name": "wjstools",
+  "version": "0.0.0",
+  "description": "Some useful javascript functions and tools.",
+  "homepage": "https://github.com/wCodeBase/wJsTools",
+  "email": "wcodebase@126.com",
+  "author": "wcodebase <wcodebase@126.com>",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "scripts": {
+    "eslint": "eslint --ext .js,.ts,.tsx --format codeframe ./",
+    "build": "rm -rf lib && concurrently \"tsc --build tsconfig-esm.json\" \"tsc --build tsconfig-cjs.json\"",
+    "test": "ts-node node_modules/.bin/mocha test/index.ts"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "prettier": "^2.2.1",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@hot-loader/react-dom": "^17.0.1",
+    "@types/chai": "^4.2.21",
+    "@types/lodash": "^4.14.170",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@types/shelljs": "^0.8.9",
+    "@types/ws": "^7.4.6",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "antd": "^4.16.10",
+    "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
+    "concurrently": "^6.2.0",
+    "css-loader": "^5.2.6",
+    "dayjs": "^1.10.6",
+    "eslint": "^7.22.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "html-webpack-plugin": "^5.3.2",
+    "http-proxy-middleware": "^2.0.1",
+    "husky": "4",
+    "immer": "^9.0.5",
+    "lint-staged": "^10.5.4",
+    "lodash": "^4.17.21",
+    "mocha": "^9.0.2",
+    "path-browserify": "^1.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "rxjs": "^7.3.0",
+    "shelljs": "^0.8.4",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "lib"
+  ],
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --format codeframe --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
